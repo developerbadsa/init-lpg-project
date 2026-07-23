@@ -1,0 +1,126 @@
+import {
+   LayoutDashboard,
+   User,
+   Receipt,
+   BadgeDollarSign,
+   Users,
+   Fuel,
+   Inbox,
+   UsersRound,
+   Image as ImageIcon,
+   Bell,
+   Download,
+   Settings,
+   LogOut,
+} from 'lucide-react';
+
+export type NavChild = {label: string; href: string};
+
+export type NavAction = 'logout';
+
+export type NavItem = {
+   key: string;
+   label: string;
+   href?: string;
+   icon: React.ComponentType<{size?: number}>;
+   children?: NavChild[];
+   action?: NavAction;
+};
+
+export const DASH_NAV: NavItem[] = [
+   {
+      key: 'dashboard',
+      label: 'Dashboard',
+      href: '/dashboard',
+      icon: LayoutDashboard,
+   },
+   {key: 'profile', label: 'Edit Profile', href: '/edit-profile', icon: User},
+   // {key: 'invoice', label: 'Invoice', href: '/invoice', icon: Receipt},
+   {
+      key: 'membership-fees',
+      label: 'Pay Membership Fee',
+      href: '/membership-fees',
+      icon: BadgeDollarSign,
+   },
+
+   {
+      key: 'owners',
+      label: 'Manage Owners',
+      icon: Users,
+      children: [
+         {label: 'Unverified Owner', href: '/manage-owners/unverified'},
+         {label: 'Verified Owner', href: '/manage-owners/verified'},
+         {label: 'Register new Owner', href: '/manage-owners/register-owner'},
+      ],
+   },
+
+   {
+      key: 'stations',
+      label: 'Manage Stations',
+      icon: Fuel,
+      children: [
+         {label: 'Unverified Stations', href: '/manage-stations/unverified'},
+         {label: 'Verified Stations', href: '/manage-stations/verified'},
+         // {label: 'Create Station', href: '/manage-stations/create-station'},
+      ],
+   },
+
+   {key: 'inbox', label: 'Inbox', href: '/inbox', icon: Inbox},
+   {
+      key: 'committee',
+      label: 'Manage Committee',
+      icon: UsersRound,
+      children: [
+         {label: 'Central Committee', href: '/manage-committee'},
+         {label: 'Zonal Committee', href: '/manage-zonal-committee'},
+      ],
+   },
+
+   {
+      key: 'media',
+      label: 'Multimedia',
+      icon: ImageIcon,
+      children: [
+         {label: 'Banners', href: '/multimedia/banners'},
+         {label: 'Photo Gallery', href: '/multimedia/photo-gallery'},
+         {label: 'Video Gallery', href: '/multimedia/video-gallery'},
+         {label: 'Print Media Gallery', href: '/multimedia/journals'},
+         {label: 'POPUP Ads', href: '/multimedia/popup-ads'},
+      ],
+   },
+   {
+      key: 'membership-form',
+      label: 'Membership Form',
+      href: '/dashboard/membership-form',
+      icon: User,
+   },
+
+   {key: 'notices', label: 'Notices', href: '/dashboard-notices', icon: Bell},
+   {
+      key: 'downloads',
+      label: 'Downloads',
+      href: '/dashboard-downloads',
+      icon: Download,
+   },
+  //  {label: 'Other Businesses', href: '/settings/other-businesses'},
+   {key: 'station-documents', label: 'Station Documents', href: '/settings/station-documents', icon: Bell},
+   {
+      key: 'settings',
+      label: 'Setting',
+      icon: Settings,
+      children: [
+         {label: 'Membership Fees', href: '/settings/membership-fees'},
+         {label: 'Division', href: '/settings/division'},
+         {label: 'District', href: '/settings/district'},
+         {label: 'Upazila/Thana', href: '/settings/upazila-thana'},
+         {label: 'SMS', href: '/settings/sms'},
+      ],
+   },
+
+   //  action item (no href)
+   {key: 'logout', label: 'Logout', icon: LogOut, action: 'logout'},
+];
+
+export const DASH_FOOTER: NavItem[] = [
+   {key: 'logout', label: 'Logout', icon: LogOut, action: 'logout'},
+];
