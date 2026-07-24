@@ -24,7 +24,7 @@ import sponserImg1 from '@/assets/sponser-img/mgi.png';
 import bpc from '@/assets/sponser-img/bpc.jpeg';
 import jamuna from '@/assets/sponser-img/jamuna.jpeg';
 import meghna from '@/assets/sponser-img/meghna.jpeg';
-import padna from '@/assets/sponser-img/padna.jpeg';
+import padmaOil from '@/assets/partner-logos/পদ্মা_অয়েল_কোম্পানীর_লোগো.svg.png';
 
 import arrowuiIcon from '@/assets/ui-icons/Layer_1 (3).png';
 import SectionHeading from '@components/ui/SectionHeading';
@@ -45,10 +45,10 @@ type Leader = {
 };
 
 const sponsors: Sponsor[] = [
-   {name: 'MGI', logo: bpc},
-   {name: 'jamuna', logo: jamuna},
-   {name: 'meghna', logo: meghna},
-   {name: 'padma', logo: padna},
+   {name: 'Meghna Petroleum', logo: meghna},
+   {name: 'Bangladesh Petroleum Corporation', logo: bpc},
+   {name: 'Jamuna Oil', logo: jamuna},
+   {name: 'Padma Oil Company', logo: padmaOil},
 
    // {name: 'Navana LPG', logo: navama},
    // {name: 'G Gas', logo: ggas},
@@ -95,8 +95,8 @@ export default function SponsorsSection() {
    }[] = [
       {
          direction: 'right',
-         items: sponsors.slice(0, 3),
-         durationSec: 8,
+         items: sponsors,
+         durationSec: 10,
       },
    ];
 
